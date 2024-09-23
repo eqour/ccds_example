@@ -10,7 +10,7 @@ app = typer.Typer()
 
 
 def calculate_age_stats(df):
-    """Вычисляет среднее значение и стандартное отклонение возраста."""
+    """Вычисляет статистические данные для возраста."""
     mean_age = df['age'].mean()
     std_age = df['age'].std()
     return mean_age, std_age
