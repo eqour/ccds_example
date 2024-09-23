@@ -14,7 +14,7 @@ def calculate_age_stats(df):
     mean_age = df['age'].mean()
     std_age = df['age'].std()
     median_age = df['age'].median()
-    return mean_age, std_age
+    return mean_age, std_age, median_age
 
 
 @app.command()
