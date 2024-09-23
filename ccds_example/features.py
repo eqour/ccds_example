@@ -9,6 +9,11 @@ from ccds_example.config import PROCESSED_DATA_DIR
 app = typer.Typer()
 
 
+def calculate_age_stats(df):
+    mean_age = df['age'].mean()
+    return mean_age
+
+
 @app.command()
 def main(
     # ---- REPLACE DEFAULT PATHS AS APPROPRIATE ----
