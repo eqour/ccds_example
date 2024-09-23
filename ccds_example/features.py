@@ -13,7 +13,8 @@ def calculate_age_stats(df):
     """Вычисляет статистические данные для возраста."""
     mean_age = df['age'].mean()
     std_age = df['age'].std()
-    return mean_age, std_age
+    median_age = df['age'].median()
+    return mean_age, std_age, median_age
 
 
 @app.command()
