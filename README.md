@@ -61,12 +61,12 @@ CookieCutter example project
 
 ## Установка окружения
 
-Для запуска необходим Python версии 3.8 с PIP
+Для запуска необходим Python версии 3.8 с poerty
 
 Для установки зависимостей перейдите в корень проекта в выполните следующую команду:
 
 ```bash
-pip install -r requirements.txt
+poerty install
 ```
 
 Перед инициализацией get pre commit hooks проверьте актуальность версий для хуков в файле конфигурации .pre-commit-config.yaml и при необходимости обновите их.
@@ -74,4 +74,27 @@ pip install -r requirements.txt
 Для инициализации git pre commit hooks необходимо выполнить следующую команду:
 ```bash
 pre-commit install
+```
+
+## Подготовка окружения для работы с S3
+
+Для успешного выполнения пайплайна необходимо запустить S3 с bucket ccds-bucket. В bucket должен находиться объект cpu_dataset.csv. Его можно загрузить из Kaggle(CPU_benchmark_v4.csv): https://www.kaggle.com/datasets/alanjo/cpu-benchmarks.
+
+Перед запуском скриптов заполните необходимые поля в файле конфигурации s3cmd для доступа к S3 в файле .s3cmd.
+
+Установите права доступа для скриптов:
+```bash
+chmod +x src/data/shell/*.sh run_pipeline.sh install_s3cmd.sh
+```
+
+Для работы с S3 установите s3cmd через shell скрипт:
+```bash
+./install_s3cmd.sh
+```
+
+## Запуск пайплайна с S3
+
+Запустите пайплайн работы с S3:
+```bash
+./run_pipeline.sh
 ```

@@ -1,0 +1,6 @@
+[default]
+access_key = your-access-key
+secret_key = your-secret-key
+bucket_location = ru-central1
+host_base = storage.yandexcloud.net
+host_bucket = %(bucket)s.storage.yandexcloud.net
