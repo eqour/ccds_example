@@ -1,0 +1,10 @@
+model:
+  svc_random_search:
+    C:
+      min: -3
+      max: 3
+      num: 7
+    gamma:
+      min: -3
+      max: 1
+      num: 5

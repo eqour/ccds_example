@@ -1,0 +1,11 @@
+services:
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.15.0
+    container_name: mlflow
+    command: /usr/local/bin/mlflow server --backend-store-uri sqlite:///mlruns.db --default-artifact-root s3://ccds-bucket/ --host 0.0.0.0
+    ports:
+      - "5000:5000"
+    environment:
+      AWS_ACCESS_KEY_ID: ${ACCESS_KEY}
+      AWS_SECRET_ACCESS_KEY: ${SECRET_KEY}
+      MLFLOW_S3_ENDPOINT_URL: ${ENDPOINT_URL}
